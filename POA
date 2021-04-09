@@ -1,0 +1,17 @@
+//make a Game class
+//makeBoard and makeHTMLBoard --> Game class?
+//findSpotForCol --> affects the board array by changing null to 1/2 --> maybe include in board instance
+//win conditions -->
+//Game instance will include board (which will need HEIGHT, WIDTH, board?)
+//construstor can have the porteries of HEIGHT and WIDTH
+//how will player be affected? from a superclass or as its own 
+
+//Game class (constructor will be have HEIGHT and WIDTH)
+//constructor will allow HEIGHTand WIDTH to be input, everything else will be "hard coded"
+//players will still be 1 and 2
+//functions will be methods --> will need to write functions maybe
+//might have to use "this" to call methods
+
+//make local repo done
+//make remote repo done
+//give collab access
