@@ -6,8 +6,7 @@
  */
 
 //  let board = []; // array of rows, each row is array of cells  (board[y][x])
-//  makeBoard();
-//  makeHtmlBoard();
+
 
 class Game {
 
@@ -17,7 +16,11 @@ class Game {
 this.height = height;
 this.width = width;
 this.currPlayer = 1; // active player: 1 or 2
-
+this.makeBoard();
+this.makeHtmlBoard();
+this.handleClick();
+this.checkForWin();
+this.findSpotForCol(x);
   }
 /** makeBoard: create in-JS board structure:
  *   board = array of rows, each row is array of cells  (board[y][x])
@@ -34,15 +37,15 @@ this.currPlayer = 1; // active player: 1 or 2
 /** makeHtmlBoard: make HTML table and row of column tops. */
  makeHtmlBoard() {
   const board = document.getElementById('board');
-  makeBoardHeader();
-  makeBoardBody();
+  this.makeBoardHeader();
+  this.makeBoardBody();
  }
 
   // make column tops (clickable area for adding a piece to that column)
   makeBoardHeader () {
-    const top = document.createElement('tr');
+  const top = document.createElement('tr');
   top.setAttribute('id', 'column-top');
-  top.addEventListener('click', handleClick);
+  top.addEventListener('click', this.handleClick);
 
   for (let x = 0; x < this.width; x++) {
     const headCell = document.createElement('td');
@@ -102,6 +105,7 @@ endGame(msg) {
 handleClick(evt) {
   // get x from ID of clicked cell
   const x = +evt.target.id;
+  console.log(x);
 
   // get next spot in column (if none, ignore click)
   const y = findSpotForCol(x);
@@ -162,7 +166,8 @@ checkForWin() {
   }
   return this._win(cells);
 }
-
+//  makeBoard();
+//  makeHtmlBoard();
 }
 
 new Game(6,7);
